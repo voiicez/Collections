@@ -62,6 +62,25 @@ namespace Collections
             {
                 Console.WriteLine(sehir.Id+" - "+sehir.Adi);
             }
+
+            IEnumerable<string> isimler = new List<string>()
+            {
+                "Behlül","Efe"
+            };
+            List<int> sayilar = new List<int>()
+            {
+                2,1,3
+            };
+            sayilar.Sort();
+            bool contains = cityList.Contains(new Sehir() { Adi = "Samsun", Id = 4 }); //false
+            Sehir s = cityList[3];
+            bool varMi = cityList.Contains(s);//true
+            int index = cityList.IndexOf(s);//3
+            cityList.Insert(0, new Sehir() { Id = -1, Adi = "Seçiniz" });
+            cityList.Remove(s);//samsun
+            cityList.RemoveAt(0);
+            cityList.Clear();
+            int cityListCount = cityList.Count;
         }
     }
     class Sehir
@@ -69,4 +88,5 @@ namespace Collections
         public int Id { get; set; }
         public string Adi { get; set; }
     }
+    
 }
